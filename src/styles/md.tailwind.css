@@ -1,0 +1,1255 @@
+/* FONTS */
+
+@font-face {
+    font-family: "Inter"!important;
+    font-style: normal!important;
+    font-weight: 100 900!important;
+    font-display: block!important;
+    src: url("../font/Inter-roman.ttf") format("truetype")!important;
+    font-named-instance: "Regular"!important;
+}
+
+@font-face {
+    font-family: "Inter"!important;
+    font-style: italic!important;
+    font-weight: 100 900!important;
+    font-display: block!important;
+    src: url("../font/Inter-italic.ttf") format("truetype")!important;
+    font-named-instance: "Italic"!important;
+}
+
+
+/* VARIABLES */
+
+.markdown-edited {
+    --theme-0: #fff;
+    /* Slate grayscale */
+    --theme-50: #f8fafc;
+    --theme-100: #f1f5f9;
+    --theme-200: #e2e8f0;
+    --theme-300: #cbd5e1;
+    --theme-400: #94a3b8;
+    --theme-500: #64748b;
+    --theme-600: #475569;
+    --theme-700: #334155;
+    --theme-800: #1e293b;
+    --theme-900: #0f172a;
+    /* Tailwind variables */
+    --tw-primary: #62bbf3;
+    --tw-prose-body: var(--theme-700);
+    --tw-prose-headings: var(--theme-900);
+    --tw-prose-lead: var(--theme-600);
+    --tw-prose-links: var(--theme-900);
+    --tw-prose-bold: var(--theme-900);
+    --tw-prose-counters: var(--theme-500);
+    --tw-prose-bullets: var(--theme-300);
+    --tw-prose-hr: var(--theme-200);
+    --tw-prose-quotes: var(--theme-900);
+    --tw-prose-quote-borders: var(--theme-200);
+    --tw-prose-captions: var(--theme-500);
+    --tw-prose-code: var(--theme-900);
+    --tw-prose-pre-code: var(--theme-100);
+    --tw-prose-pre-bg: var(--theme-800);
+    --tw-prose-th-borders: var(--theme-300);
+    --tw-prose-td-borders: var(--theme-200);
+    --tw-prose-bg: var(--theme-0);
+    --tw-prose-meta: var(--theme-500);
+    --tw-prose-meta-bg: var(--theme-100);
+    --tw-prose-invert-body: var(--theme-300);
+    --tw-prose-invert-headings: var(--theme-0);
+    --tw-prose-invert-lead: var(--theme-400);
+    --tw-prose-invert-links: var(--theme-0);
+    --tw-prose-invert-bold: var(--theme-0);
+    --tw-prose-invert-counters: var(--theme-400);
+    --tw-prose-invert-bullets: var(--theme-600);
+    --tw-prose-invert-hr: var(--theme-700);
+    --tw-prose-invert-quotes: var(--theme-100);
+    --tw-prose-invert-quote-borders: var(--theme-700);
+    --tw-prose-invert-captions: var(--theme-400);
+    --tw-prose-invert-code: var(--theme-0);
+    --tw-prose-invert-pre-bg: var(--theme-900);
+    --tw-prose-invert-th-borders: var(--theme-600);
+    --tw-prose-invert-td-borders: var(--theme-700);
+    --tw-prose-invert-bg: var(--theme-800);
+    --tw-prose-invert-meta: var(--theme-400);
+    --tw-prose-invert-meta-bg: var(--theme-700);
+    --tw-highlight-color: #fde047;
+    /* yellow-300 */
+    --tw-drop-shadow-md: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+    --tw-button-hover-bg: var(--theme-100);
+    --tw-button-hover-bg-inverted: var(--theme-700);
+    /* Typora variables */
+    --background: var(--tw-prose-bg);
+    --bg-color: var(--tw-prose-bg);
+    --text-color: var(--tw-prose-body);
+    --primary-color: var(--tw-primary);
+    --md-char-color: var(--theme-400);
+    --meta-content-color: var(--theme-500);
+    --typora-source-body: var(--theme-800);
+    --heading-char-color: var(--md-char-color);
+    --mermaid-theme: neutral;
+    --active-toggle-btn-color: var(--theme-200);
+    --md-char-color-inverted: var(--theme-500);
+    --meta-content-color-inverted: var(--theme-400);
+    --typora-source-body-inverted: var(--theme-300);
+    --mermaid-theme-inverted: dark;
+    --active-toggle-btn-color-inverted: var(--theme-400);
+    /* Sidebar */
+    --side-bar-bg-color: var(--tw-prose-bg);
+    --active-file-bg-color: var(--theme-100);
+    --active-file-text-color: var(--tw-prose-bold);
+    --active-file-border-color: var(--theme-100);
+    --panel-border-color: var(--theme-300);
+    --blur-text-color: var(--theme-300);
+    --window-border: 1px solid var(--theme-200);
+    --item-hover-bg-color: var(--theme-100);
+    --search-hit-text-bg-color: var(--theme-200);
+    --search-hit-text-font-color: inherit;
+    --search-select-text-color: var(--select-text-font-color);
+    --search-select-bg-color: var(--select-text-bg-color);
+    --blur-text-color-inverted: var(--theme-500);
+    --panel-border-color-inverted: var(--theme-700);
+    --active-file-bg-color-inverted: var(--theme-700);
+    --window-border-inverted: 1px solid var(--theme-700);
+    --search-hit-text-bg-color-inverted: var(--theme-700);
+    --search-hit-text-font-color-inverted: var(--theme-0);
+    --search-select-bg-color-inverted: var(--theme-400);
+    --rawblock-edit-panel-bd: var(--tw-prose-pre-bg);
+    --item-hover-bg-color-inverted: var(--theme-700);
+    --monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    /* Custom */
+    --footnote: var(--tw-prose-body);
+    /* I'd love to use the --theme grayscale for --footnote-bg, but there's (currently)
+  no way to add an alpha-channel to a CSS variable (and we need the transparency
+  because otherwise the caret wil not be visible), so I here just used a hardcoded
+  copy of --theme-500 */
+    --footnote-bg: #94a3b855;
+    --button-bg: var(--theme-200);
+    --button-bg-inverted: var(--theme-600);
+    --md-grid-header: var(--theme-100);
+    --md-grid-header-ext: var(--theme-400);
+    --md-grid-ext: var(--theme-300);
+    --md-grid-header-active: var(--theme-500);
+    --md-grid-active: var(--theme-400);
+    --md-grid-border-color: var(--theme-500);
+    --md-grid-header-inverted: var(--theme-600);
+    --md-grid-header-ext-inverted: var(--theme-500);
+    --md-grid-ext-inverted: var(--theme-600);
+    --md-grid-header-active-inverted: var(--theme-400);
+    --md-grid-active-inverted: var(--theme-500);
+    --md-grid-border-color-inverted: var(--theme-200);
+    --code-blocks-font-size: 0.9em;
+    --inline-code-font-size: 0.9em;
+
+
+    .ty-file-search-match-text {
+        background-color: var(--search-hit-text-bg-color) !important;
+    }
+
+
+    /* TAILWIND RESET */
+
+
+    /*
+    1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+    2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+    */
+
+    *,
+    ::before,
+    ::after {
+        box-sizing: border-box !important;
+        /* 1 */
+        border-width: 0 !important;
+        /* 2 */
+        border-style: solid !important;
+        /* 2 */
+        border-color: currentColor !important;
+        /* 2 */
+    }
+
+    ::before,
+    ::after {
+        --tw-content: "" !important;
+    }
+
+
+    /*
+    1. Use a consistent sensible line-height in all browsers.
+    2. Prevent adjustments of font size after orientation changes in iOS.
+    3. Use a more readable tab size.
+    */
+
+    #text {
+        line-height: 1.5 !important;
+        /* 1 */
+        -webkit-text-size-adjust: 100% !important;
+        /* 2 */
+        -moz-tab-size: 4 !important;
+        /* 3 */
+        -o-tab-size: 4 !important;
+        tab-size: 4 !important;
+        /* 3 */
+    }
+
+
+    /*
+    1. Remove the margin in all browsers.
+    2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+    */
+
+    #text {
+        margin: 0 !important;
+        /* 1 */
+        line-height: inherit !important;
+        /* 2 */
+    }
+
+
+    /*
+    1. Add the correct height in Firefox.
+    2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+    3. Ensure horizontal rules are visible by default.
+    */
+
+    :is(hr) {
+        height: 0 !important;
+        /* 1 */
+        color: inherit !important;
+        /* 2 */
+        border-top-width: 1px !important;
+        /* 3 */
+    }
+
+
+    /*
+    Add the correct text decoration in Chrome, Edge, and Safari.
+    */
+
+    :is(abbr:where([title])) {
+        -webkit-text-decoration: underline dotted !important;
+        text-decoration: underline dotted !important;
+    }
+
+
+    /*
+    Remove the default font size and weight for headings.
+    */
+
+    :is(h1),
+    :is(h2),
+    :is(h3),
+    :is(h4),
+    :is(h5),
+    :is(h6) {
+        font-size: inherit !important;
+        font-weight: inherit !important;
+    }
+
+
+    /*
+    Reset links to optimize for opt-in styling instead of opt-out.
+    */
+
+    :is(a) {
+        color: inherit !important;
+        text-decoration: inherit !important;
+    }
+
+
+    /*
+    Add the correct font weight in Edge and Safari.
+    */
+
+    :is(b),
+    :is(strong) {
+        font-weight: bolder !important;
+    }
+
+
+    /*
+    1. Use the user's configured `mono` font family by default.
+    2. Correct the odd `em` font sizing in all browsers.
+    */
+
+    :is(code),
+    :is(kbd),
+    :is(samp),
+    :is(pre) {
+        font-family: var(--monospace) !important;
+        /* 1 */
+        font-size: 1em !important;
+        /* 2 */
+    }
+
+
+    /*
+    Add the correct font size in all browsers.
+    */
+
+    :is(small) {
+        font-size: 80% !important;
+    }
+
+
+    /*
+    Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+    */
+
+    :is(sub),
+    :is(sup) {
+        font-size: 75% !important;
+        line-height: 0 !important;
+        position: relative !important;
+        vertical-align: baseline !important;
+    }
+
+    :is(sub) {
+        bottom: -0.25em !important;
+    }
+
+    :is(sup) {
+        top: -0.5em !important;
+    }
+
+
+    /*
+    1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+    2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+    3. Remove gaps between table borders by default.
+    */
+
+    :is(table) {
+        text-indent: 0 !important;
+        /* 1 */
+        border-color: inherit !important;
+        /* 2 */
+        border-collapse: collapse !important;
+        /* 3 */
+    }
+
+
+    /*
+    1. Change the font styles in all browsers.
+    2. Remove the margin in Firefox and Safari.
+    3. Remove default padding in all browsers.
+    */
+
+    :is(button),
+    :is(input),
+    :is(optgroup),
+    :is(select),
+    :is(textarea) {
+        font-family: inherit !important;
+        /* 1 */
+        font-size: 100% !important;
+        /* 1 */
+        line-height: inherit !important;
+        /* 1 */
+        color: inherit !important;
+        /* 1 */
+        margin: 0 !important;
+        /* 2 */
+        padding: 0 !important;
+        /* 3 */
+    }
+
+
+    /*
+    Removes the default spacing and border for appropriate elements.
+    */
+
+    :is(blockquote),
+    :is(dl),
+    :is(dd),
+    :is(h1),
+    :is(h2),
+    :is(h3),
+    :is(h4),
+    :is(h5),
+    :is(h6),
+    :is(hr),
+    :is(figure),
+    :is(p),
+    :is(pre) {
+        margin: 0 !important;
+    }
+
+    :is(fieldset) {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    :is(legend) {
+        padding: 0 !important;
+    }
+
+    :is(ol),
+    :is(ul),
+    :is(menu) {
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+
+    /*
+    Prevent resizing textareas horizontally by default.
+    */
+
+    :is(textarea) {
+        resize: vertical !important;
+    }
+
+
+    /* TAILWIND PROSE IMPLEMENTATION */
+
+    .markdown-body {
+        font-size: 1.25rem /* 20px */ !important;
+        line-height: 1.8 !important;
+    }
+
+    :is(html),
+    :is(body) {
+        font-family: "Inter", serif !important;
+    }
+
+
+    /* on Windows/Linux, it is the part that is not titlebar or status bar. */
+
+    :is(content),
+    :is(titlebar) {
+        background: var(--tw-prose-bg) !important;
+    }
+
+    .markdown-body {
+        position: static !important;
+        width: 90% !important;
+        max-width: 900px !important;
+        line-height: 1.6 !important;
+        padding: 36px 0 70px !important;
+    }
+
+    .markdown-body > :where(:first-child) {
+        margin-top: 0 !important;
+    }
+
+    .markdown-body > :where(:last-child) {
+        margin-bottom: 0 !important;
+    }
+
+
+    /**
+      * ---------------------
+      * Block Elements
+      */
+
+
+    /* yaml */
+
+    :is(pre) {
+        color: var(--tw-prose-meta) !important;
+        background-color: var(--tw-prose-meta-bg) !important;
+        font-weight: 400 !important;
+        font-size: var(--code-blocks-font-size) !important;
+        line-height: 1.7777778 !important;
+        border-radius: 0.5rem /* 8px */ !important;
+        padding: 1.1111111em 1.3333333em !important;
+        margin-bottom: 2.8em !important;
+    }
+
+
+    /* headings */
+
+    :is(h1) {
+        color: var(--tw-prose-headings) !important;
+        font-weight: 800 !important;
+        font-size: 2.8em !important;
+        margin-top: 0 !important;
+        margin-bottom: 0.8571429em !important;
+        line-height: 1 !important;
+    }
+
+    :is(h1) strong {
+        font-weight: 900 !important;
+    }
+
+    :is(h2) {
+        color: var(--tw-prose-headings) !important;
+        font-weight: 700 !important;
+        font-size: 1.8em !important;
+        margin-top: 1.5555556em !important;
+        margin-bottom: 0.8888889em !important;
+        line-height: 1.1111111 !important;
+    }
+
+    :is(h2) strong {
+        font-weight: 800 !important;
+    }
+
+    :is(h3) {
+        color: var(--tw-prose-headings) !important;
+        font-weight: 600 !important;
+        font-size: 1.5em !important;
+        margin-top: 1.6em !important;
+        margin-bottom: 0.6666667em !important;
+        line-height: 1.3333333 !important;
+    }
+
+    :is(h3) strong {
+        font-weight: 700 !important;
+    }
+
+    :is(h4) {
+        color: var(--tw-prose-headings) !important;
+        font-weight: 600 !important;
+        margin-top: 1.8em !important;
+        margin-bottom: 0.6em !important;
+        line-height: 1.6 !important;
+    }
+
+    :is(h4) strong {
+        font-weight: 700 !important;
+    }
+
+    :is(h2) code {
+        font-size: 0.8611111em !important;
+    }
+
+    :is(h3) code {
+        font-size: 0.9em !important;
+    }
+
+    :is(h2) + * {
+        margin-top: 0 !important;
+    }
+
+    :is(h3) + * {
+        margin-top: 0 !important;
+    }
+
+    :is(h4) + * {
+        margin-top: 0 !important;
+    }
+
+
+    /* table */
+
+    :is(table) {
+        width: 100% !important;
+        table-layout: auto !important;
+        text-align: left !important;
+        margin-top: 2em !important;
+        margin-bottom: 2em !important;
+        font-size: 0.9em !important;
+        line-height: 1.5555556 !important;
+    }
+
+
+    /* table header */
+
+    :is(thead) {
+        border-bottom-width: 1px !important;
+        border-bottom-color: var(--tw-prose-th-borders) !important;
+    }
+
+    :is(thead) th {
+        color: var(--tw-prose-headings) !important;
+        font-weight: 600 !important;
+        vertical-align: bottom !important;
+        padding-right: 0.6666667em !important;
+        padding-bottom: 0.8888889em !important;
+        padding-left: 0.6666667em !important;
+    }
+
+    :is(thead) th:first-child {
+        padding-left: 0 !important;
+    }
+
+    :is(thead) th:last-child {
+        padding-right: 0 !important;
+    }
+
+    :is(thead) tr {
+        background: none !important;
+    }
+
+    :is(tbody) tr {
+        border-bottom-width: 1px !important;
+        border-bottom-color: var(--tw-prose-td-borders) !important;
+        background: none !important;
+    }
+
+    :is(tbody) tr:last-child {
+        border-bottom-width: 0 !important;
+    }
+
+    :is(tbody) td {
+        vertical-align: baseline !important;
+        padding-top: 0.8888889em !important;
+        padding-right: 0.6666667em !important;
+        padding-bottom: 0.8888889em !important;
+        padding-left: 0.6666667em !important;
+    }
+
+    :is(tbody) td:first-child {
+        padding-left: 0 !important;
+    }
+
+    :is(tbody) td:last-child {
+        padding-right: 0 !important;
+    }
+
+    .md-grid-board tr[row="1"] {
+        background-color: var(--md-grid-header) !important;
+    }
+
+    .md-grid-board a:hover,
+    .md-grid-board a.md-active {
+        background: var(--md-grid-active) !important;
+    }
+
+    .md-grid-board tr[row="1"] a:hover,
+    .md-grid-board tr[row="1"] a.md-active {
+        background: var(--md-grid-header-active) !important;
+    }
+
+    .md-grid-board .md-grid-ext {
+        background: var(--md-grid-ext) !important;
+    }
+
+    .md-grid-board tr[row="1"] .md-grid-ext {
+        background: var(--md-grid-header-ext) !important;
+    }
+
+    .md-grid-board a {
+        border-color: var(--md-grid-border-color) !important;
+    }
+
+
+    /* lists */
+
+    :is(ol) {
+        list-style-type: decimal !important;
+        padding-left: 1.6em !important;
+    }
+
+    :is(li) {
+        margin-top: 0.6em !important;
+        margin-bottom: 0.6em !important;
+    }
+
+    :is(ul) {
+        list-style-type: disc !important;
+        padding-left: 1.6em !important;
+    }
+
+    .markdown-body ul.task-list {
+        padding-left: 0 !important;
+    }
+
+    .markdown-body li.task-list-item {
+        padding-left: 0.4em !important;
+    }
+
+    .markdown-body input[type="checkbox"] {
+        margin-left: -1em !important;
+    }
+
+    :is(input[checked]) ~ * {
+        opacity: 0.7 !important;
+        text-decoration: line-through !important;
+    }
+
+    :is(ol) > li::marker {
+        font-weight: 400 !important;
+        color: var(--tw-prose-counters) !important;
+    }
+
+    :is(ul) > li::marker {
+        color: var(--tw-prose-bullets) !important;
+    }
+
+    :is(ul) > li,
+    :is(ol) > li {
+        padding-left: 0.4em !important;
+    }
+
+    :is(ul) > li p,
+    :is(ol) > li p {
+        margin-top: 0.8em !important;
+        margin-bottom: 0.8em !important;
+    }
+
+    .markdown-body > ul > li > :not(input):first-child,
+    .markdown-body > ol > li > :not(input):first-child,
+    .markdown-body > ul > li > input + *,
+    .markdown-body > ol > li > input + * {
+        margin-top: 1.2em !important;
+    }
+
+    .markdown-body > ul > li > *:last-child,
+    .markdown-body > ol > li > *:last-child {
+        margin-bottom: 1.2em !important;
+    }
+
+    .markdown-body ul > li > p:only-child,
+    .markdown-body ol > li > p:only-child,
+    .markdown-body ul > li > input + p:last-child,
+    .markdown-body ol > li > input + p:last-child {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    :is(ul) ul,
+    :is(ul) ol,
+    :is(ol) ul,
+    :is(ol) ol {
+        margin-top: 0.8em !important;
+        margin-bottom: 0.8em !important;
+    }
+
+
+    /* blockquote */
+
+    :is(blockquote) {
+        font-weight: 500 !important;
+        font-style: italic !important;
+        color: var(--tw-prose-quotes) !important;
+        border-left-width: 0.25rem !important;
+        border-left-color: var(--tw-prose-quote-borders) !important;
+        quotes: "\201C" "\201D" "\2018" "\2019" !important;
+        margin-top: 1.6em !important;
+        margin-bottom: 1.6em !important;
+        padding-left: 1.0666667em !important;
+    }
+
+    :is(blockquote) p:first-of-type::before {
+        content: open-quote !important;
+    }
+
+    :is(blockquote) p:last-of-type::after {
+        content: close-quote !important;
+    }
+
+
+    /* hr */
+
+    :is(hr) {
+        border-color: var(--tw-prose-hr) !important;
+        border-top-width: 1px !important;
+    }
+
+    [mdtype="hr"] {
+        margin-top: 2.8em !important;
+        margin-bottom: 2.8em !important;
+    }
+
+    :is(p) {
+        margin-top: 1.2em !important;
+        margin-bottom: 1.2em !important;
+    }
+
+
+    /* diagram panel */
+
+    .md-diagram-panel {
+        color: var(--tw-prose-body) !important;
+    }
+
+    .enable-diagrams .md-diagram .code-tooltip {
+        bottom: -1.9em !important;
+        right: 0 !important;
+    }
+
+    .md-fences-adv-panel {
+        margin-top: 1.3em !important;
+    }
+
+
+    /* footnote definition */
+
+    :is(sup.md-footnote) {
+        color: var(--footnote) !important;
+        background-color: var(--footnote-bg) !important;
+    }
+
+    .footnotes {
+        font-size: 0.85em !important;
+    }
+
+    .md-reverse-footnote-area a {
+        font-family: "Inter" !important;
+        text-decoration: none !important;
+        color: var(--tw-primary) !important;
+        border-radius: 3px !important;
+    }
+
+    .md-hover-tip .code-tooltip-content {
+        font-size: 1.05rem !important;
+        line-height: 1.6 !important;
+        padding: 0.8em 1.2em !important;
+    }
+
+    .md-reverse-footnote-area a:hover {
+        background-color: var(--item-hover-bg-color) !important;
+    }
+
+    .md-def-name:before {
+        color: var(--md-char-color) !important;
+    }
+
+    .md-rawblock.md-rawblock-on-edit,
+    .md-rawblock:hover {
+        color: var(--tw-prose-pre-code) !important;
+    }
+
+    .md-inline-math script {
+        color: var(--tw-prose-code) !important;
+    }
+
+    :is(g[data-mml-node="merror"]) > rect[data-background] {
+        fill: var(--tw-highlight-color) !important;
+    }
+
+    :is(g[data-mml-node="merror"]) > g {
+        fill: #000 !important;
+        stroke: #000 !important;
+    }
+
+    .code-tooltip {
+        color: var(--tw-prose-pre-code) !important;
+    }
+
+    .code-tooltip .md-mathjax-preview {
+        color: var(--tw-prose-body) !important;
+    }
+
+    .md-htmlblock-container,
+    .md-rawblock-input.md-rawblock-control,
+    .md-htmlblock-panel.md-rawblock-control,
+    .md-math-container {
+        border-radius: 0.5rem 0 0.5rem 0.5rem !important;
+    }
+
+    .md-rawblock-input {
+        font-size: var(--code-blocks-font-size) !important;
+        padding: 0 1.3333333em !important;
+    }
+
+    .md-mathblock-panel .md-rawblock-input.md-rawblock-control {
+        border-top-color: transparent !important;
+        border-bottom-color: transparent !important;
+        border-radius: 0 !important;
+    }
+
+    .md-mathblock-panel .md-rawblock-before {
+        padding-top: 1.1em !important;
+        border-top-left-radius: 0.5rem !important;
+    }
+
+    .md-mathblock-panel .md-rawblock-after {
+        padding-bottom: 1.1em !important;
+        border-bottom-left-radius: 0.5rem !important;
+        border-bottom-right-radius: 0.5rem !important;
+    }
+
+    .md-htmlblock-panel .md-rawblock-input {
+        padding-top: 1.1111111em !important;
+        padding-bottom: 1.1111111em !important;
+    }
+
+    .md-mathblock-panel .md-rawblock-before,
+    .md-mathblock-panel .md-rawblock-after {
+        font-size: var(--code-blocks-font-size) !important;
+        padding-left: calc(4px + 1.3333333em) !important;
+        color: var(--code-bracket) !important;
+    }
+
+    .md-rawblock-tooltip {
+        color: var(--tw-prose-pre-code) !important;
+        border-radius: 0.5rem 0.5rem 0 0 !important;
+    }
+
+    .md-rawblock-tooltip-name {
+        opacity: 1 !important;
+    }
+
+    .md-comment {
+        font-size: var(--inline-code-font-size) !important;
+        color: var(--code-comment) !important;
+    }
+
+    .md-raw-inline,
+    .md-tag,
+    [md-inline="linebreak"],
+    .md-image > .md-meta,
+    .md-inline-math.md-expand > .md-inline-math-container {
+        font-size: var(--code-blocks-font-size) !important;
+    }
+
+
+    /**
+      * Code Fences
+      * see http://support.typora.io/Code-Block-Styles
+      */
+
+    .md-fences {
+        color: var(--tw-prose-pre-code) !important;
+        background-color: var(--tw-prose-pre-bg) !important;
+        font-weight: 400 !important;
+        font-size: var(--code-blocks-font-size) !important;
+        line-height: 1.7777778 !important;
+        margin-top: 2em !important;
+        margin-bottom: 2em !important;
+        border-radius: 0.5rem /* 8px */ !important;
+        padding: 1.1111111em 1.3333333em !important;
+    }
+
+    .md-fences.md-focus {
+        border-bottom-right-radius: 0 !important;
+    }
+
+    .md-fences > .code-tooltip {
+        height: 1.8rem !important;
+        bottom: -1.8rem !important;
+        font-size: 0.9rem !important;
+        border-radius: 0 0 0.5rem 0.5rem !important;
+    }
+
+    .code-tooltip .ty-input {
+        min-width: 10rem !important;
+    }
+
+    :is(pre) code {
+        background-color: transparent !important;
+        border-width: 0 !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        font-weight: inherit !important;
+        color: inherit !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        line-height: inherit !important;
+    }
+
+    :is(pre) code::before {
+        content: none !important;
+    }
+
+    :is(pre) code::after {
+        content: none !important;
+    }
+
+
+    /* SYNTAX HIGHLIGHTING */
+
+
+        --code-neutral: var(--theme-800) !important;
+        --code-cursor: var(--theme-900) !important;
+        --code-string: rgb(14, 165, 233) !important;
+        /* sky-500 */
+        --code-number: rgb(245, 158, 11) !important;
+        /* amber-500 */
+        --code-tag: rgb(236, 72, 153) !important;
+        /* pink-500 */
+        --code-variable: var(--theme-700) !important;
+        --code-operator: var(--theme-600) !important;
+        --code-comment: var(--theme-500) !important;
+        --code-bracket: var(--theme-500) !important;
+        --code-citation: var(--theme-500) !important;
+        --code-neutral-inverted: var(--theme-100) !important;
+        --code-cursor-inverted: var(--theme-50) !important;
+        --code-string-inverted: #7dd4fc !important;
+        /* sky-300 */
+        --code-number-inverted: #fde68a !important;
+        /* amber-100 */
+        --code-tag-inverted: #f472b5 !important;
+        /* pink-400 */
+        --code-variable-inverted: var(--theme-200) !important;
+        --code-operator-inverted: var(--theme-400) !important;
+        --code-comment-inverted: var(--theme-400) !important;
+        --code-bracket-inverted: var(--theme-500) !important;
+        --code-citation-inverted: var(--theme-400) !important;
+
+
+    .markdown-body .cm-s-inner {
+        --code-neutral: var(--code-neutral-inverted) !important;
+        --code-cursor: var(--code-cursor-inverted) !important;
+        --code-string: var(--code-string-inverted) !important;
+        --code-number: var(--code-number-inverted) !important;
+        --code-tag: var(--code-tag-inverted) !important;
+        --code-variable: var(--code-variable-inverted) !important;
+        --code-operator: var(--code-operator-inverted) !important;
+        --code-comment: var(--code-comment-inverted) !important;
+        --code-bracket: var(--code-bracket-inverted) !important;
+        --code-citation: var(--code-citation-inverted) !important;
+    }
+
+    .CodeMirror-selectedtext {
+        background-color: transparent !important;
+    }
+
+    .CodeMirror-cursor {
+        border-left: 1px solid var(--code-cursor) !important;
+    }
+
+    .CodeMirror-gutters {
+        border-color: var(--code-comment) !important;
+    }
+
+    .cm-s-inner span.cm-string {
+        color: var(--code-string) !important;
+    }
+
+    .cm-s-inner span.cm-number {
+        color: var(--code-number) !important;
+    }
+
+    .cm-s-inner span.cm-tag,
+    .cm-s-inner span.cm-keyword,
+    .cm-s-inner span.cm-qualifier {
+        color: var(--code-tag) !important;
+    }
+
+    .cm-s-inner .CodeMirror-guttermarker,
+    .cm-s-inner .CodeMirror-guttermarker-subtle,
+    .cm-s-inner span.cm-comment.cm-def,
+    .cm-s-inner span.cm-comment.cm-type,
+    .cm-s-inner span.cm-builtin,
+    .cm-s-inner span.cm-type,
+    .cm-s-inner span.cm-header,
+    .cm-s-inner span.cm-link,
+    .cm-s-inner span.cm-error {
+        background: transparent !important;
+        color: var(--code-neutral) !important;
+    }
+
+    .cm-s-inner span.cm-attribute,
+    .cm-s-inner span.cm-property,
+    .cm-s-inner span.cm-variable,
+    .cm-s-inner span.cm-variable-2,
+    .cm-s-inner span.cm-variable-3,
+    .cm-s-inner span.cm-type,
+    .cm-s-inner span.cm-atom,
+    .cm-s-inner span.cm-def {
+        color: var(--code-variable) !important;
+    }
+
+    .cm-s-inner span.cm-comment,
+    .cm-s-inner .CodeMirror-linenumber {
+        color: var(--code-comment) !important;
+    }
+
+    .cm-s-inner span.cm-operator {
+        color: var(--code-operator) !important;
+    }
+
+    .cm-s-inner span.cm-bracket,
+    .cm-s-inner span.cm-tag.cm-bracket,
+    .cm-s-inner span.cm-meta {
+        color: var(--code-bracket) !important;
+    }
+
+    .cm-s-inner span.cm-link {
+        text-decoration: underline !important;
+    }
+
+
+    /**
+      * Inline Elements
+      */
+
+
+    /* basic styles */
+
+    :is(code) {
+        color: var(--tw-prose-code) !important;
+        font-weight: 600 !important;
+        font-size: var(--inline-code-font-size) !important;
+    }
+
+    :is(code::before) {
+        content: "`" !important;
+    }
+
+    :is(code::after) {
+        content: "`" !important;
+    }
+
+    [md-inline="code"].md-expand > code::before,
+    [md-inline="code"].md-expand > code::after {
+        content: "" !important;
+    }
+
+    :is(a) code {
+        color: var(--tw-prose-links) !important;
+    }
+
+    :is(strong) {
+        color: var(--tw-prose-bold) !important;
+        font-weight: 600 !important;
+    }
+
+    :is(a) {
+        color: var(--tw-prose-links) !important;
+        text-decoration: underline !important;
+        font-weight: 500 !important;
+    }
+
+
+    /* A block-level image should have a total top and bottom margin of 2em.
+    It is always wrapped in a paragraph with 1.2em vertical margin, hence we
+    add 0.8 here */
+
+    :is(p) > .md-image:only-child {
+        margin-top: 0.8em !important;
+        margin-bottom: 0.8em !important;
+    }
+
+    .md-image > .md-meta {
+        color: var(--tw-prose-code) !important;
+    }
+
+
+    /* extend styles */
+
+    :is(mark) {
+        border-radius: 3px !important;
+        padding: 0 2px !important;
+        background-color: var(--tw-highlight-color) !important;
+    }
+
+
+    /**
+      * Source Code Mode
+      * see http://support.typora.io/Code-Block-Styles
+      */
+
+    .cm-s-typora-default .CodeMirror-activeline-background {
+        background-color: var(--item-hover-bg-color) !important;
+    }
+
+    #typora-source {
+        font-family: var(--monospace) !important;
+        color: var(--typora-source-body) !important;
+    }
+
+    #typora-source .cm-header {
+        color: var(--code-tag) !important;
+    }
+
+    #typora-source .cm-link {
+        color: var(--code-string) !important;
+    }
+
+    #typora-source .cm-string {
+        color: var(--code-string) !important;
+    }
+
+    #typora-source .cm-comment {
+        color: var(--code-comment) !important;
+    }
+
+    #typora-source .cm-atom {
+        color: var(--code-citation) !important;
+    }
+
+    #typora-source .cm-tag {
+        color: var(--code-tag) !important;
+    }
+
+    #typora-source .cm-attribute {
+        color: var(--code-variable) !important;
+    }
+
+    #typora-source .cm-bracket {
+        color: var(--code-bracket) !important;
+    }
+
+    .file-list-item-file-ext-part {
+        opacity: 0.5 !important;
+    }
+
+    .markdown-body div.md-toc-tooltip {
+        background-color: var(--tw-prose-bg) !important;
+    }
+
+    .md-toc {
+        font-size: 0.8em !important;
+    }
+
+    .md-toc-h1 .md-toc-inner {
+        margin-left: 0 !important;
+    }
+
+    .md-toc-h2 .md-toc-inner {
+        margin-left: 1em !important;
+    }
+
+    .md-toc-h3 .md-toc-inner {
+        margin-left: 2em !important;
+    }
+
+    .md-toc-h4 .md-toc-inner {
+        margin-left: 3em !important;
+    }
+
+    .md-toc-h5 .md-toc-inner {
+        margin-left: 4em !important;
+    }
+
+    .md-toc-h6 .md-toc-inner {
+        margin-left: 5em !important;
+    }
+
+    #typora-sidebar {
+        border-right: var(--window-border) !important;
+    }
+
+    .sidebar-tab {
+        text-transform: none !important;
+        font-weight: 700 !important;
+        font-size: 1.1em !important;
+    }
+
+    .md-search-hit {
+        color: var(--search-hit-text-font-color) !important;
+        background-color: var(--search-hit-text-bg-color) !important;
+    }
+
+    #md-searchpanel {
+        box-shadow: none !important;
+        filter: var(--tw-drop-shadow-md) !important;
+    }
+
+    #md-searchpanel .btn:not(.close-btn):hover {
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        background-color: var(--tw-button-hover-bg) !important;
+    }
+
+    #md-searchpanel input,
+    #md-searchpanel .btn,
+    #searchpanel-msg {
+        border-radius: 5px !important;
+    }
+
+    #searchpanel-msg {
+        color: var(--theme-500) !important;
+        border-color: var(--theme-300) !important;
+        background: var(--theme-100) !important;
+    }
+
+    .form-control {
+        border-color: var(--panel-border-color) !important;
+    }
+
+    .btn-default {
+        background-color: var(--button-bg) !important;
+    }
+
+    .highlight {
+        background: none !important;
+    }
+}

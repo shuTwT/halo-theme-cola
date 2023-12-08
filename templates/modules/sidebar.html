@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:halo="http://www.w3.org/1999/html">
+<th:block th:fragment="sidebar">
+    <div x-data x-bind:class="$store.sidebar.isOpen()?'is-open':''"
+         class="cola-sidebar relative">
+        <div class="backdrop" x-data @click="$store.sidebar.close()">
+
+        </div>
+        <div x-data x-bind:class="$store.sidebar.isOpen()?'is-open':''"
+             class="sidebar-wrapper absolute left-0 top-0 bottom-0 w-[var(--app-sidebar-width)] transition-transform" >
+            <div class="max-w-full rounded-full m-10">
+                <a class="block h-0 pb-[100%] relative" target="_blank" rel="noopener"
+                   title="">
+                    <img class="absolute h-full max-w-full rounded-[100%] transition-transform bg-gray-300"
+                         th:src="${theme.config.general.avatar?:theme.config.general.random_avatar_api}"
+                         loading="lazy"
+                         width="190"
+                         alt="">
+                </a>
+            </div>
+            <div class="flex" th:with="stats=${siteStatsFinder.getStats()}">
+                <div class="flex flex-col flex-1 text-center text-[#a3a8ae]">
+                    <span class="text-[#363636]">文章</span>
+                    <th:block th:text="${stats.post}"></th:block>
+                </div>
+                <div class="flex flex-col flex-1 text-center text-[#a3a8ae]">
+                    <span class="text-[#363636]">标签</span>
+                    <th:block th:with="tags=${tagFinder.listAll()}" th:text="${#lists.size(tags)}"></th:block>
+                </div>
+                <div class="flex flex-col flex-1 text-center text-[#a3a8ae]">
+                    <span class="text-[#363636]">分类</span>
+                    <th:block th:text="${stats.category}"></th:block>
+                </div>
+            </div>
+            <div class="py-3 px-8" th:with="menuName=${theme.config.nav.leftMenu}">
+                <th:block
+                        th:with="menu=${!#strings.isEmpty(menuName)?menuFinder.getByName(menuName):menuFinder.getPrimary()}">
+                    <th:block th:each="menuItem:${menu.menuItems}">
+                        <a class="flex opacity-90 bg-white px-14 transition ease-in-out rounded-3xl shadow-lg mb-4 text-gray-300 hover:scale-110 hover:bg-sky-400 hover:text-white hover:shadow-[var(--color-primary)]"
+                           th:href="${menuItem.spec.href}"
+                           th:title="${menuItem.spec.displayName}">
+                            <i class="iconfont icon-home"></i>
+                            <div class="font-normal py-6" th:text="${menuItem.spec.displayName}">回到首页</div>
+                        </a>
+                    </th:block>
+                </th:block>
+            </div>
+            <div>
+                <div class="shadow bg-white rounded-3xl overflow-hidden whitespace-normal m-8">
+                    <div class="p-5">
+                        <a class="m-1.5" href="" target="_blank">
+                            <i class="ri-qq-fill text-blue-500"></i>
+                        </a>
+                        <a href="https://github.com/" target="_blank">
+                            <i class="ri-github-fill text-black"></i>
+                        </a>
+                        <a href="https://space.bilibili.com/" target="_blank">
+                            <i class="ri-bilibili-fill text-pink-300"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="px-12 text-[#777] whitespace-normal mb-8 text-lg text-center">
+                © 2023
+                <a href="/" th:text="${site.title}"></a>
+                <br>
+                Powered by <a href="https://halo.run/" target="_blank">halo</a>
+                <br>
+                <a th:if="${!#strings.isEmpty(theme.config.general.icp)}" target="_blank" href="https://beian.miit.gov.cn/" rel="external nofollow noopener noreferrer" th:text="${theme.config.general.icp}"></a>
+                <br>
+                <a th:if="${!#strings.isEmpty(theme.config.general.gov)}" target="_blank" href="https://www.beian.gov.cn/portal/registerSystemInfo" rel="external nofollow noopener noreferrer" th:text="${theme.config.general.gov}"></a>
+                <halo:footer/>
+
+            </div>
+        </div>
+    </div>
+</th:block>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="header">
+    <div class="cola-header h-24 hidden max-lg:block">
+        <div class="app-bar flex justify-between h-full bg-white">
+            <button x-data @click="$store.sidebar.open()">
+                <i class="ri-menu-fill"></i>
+            </button>
+        </div>
+        <div></div>
+    </div>
+</th:block>
+</html>

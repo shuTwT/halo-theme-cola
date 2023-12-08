@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" th:replace="~{modules/layout::layout(content=~{::content})}">
+<th:block th:fragment="content">
+        <th:block th:replace="~{modules/sidebar::sidebar}"></th:block>
+        <div id="cola-content" class="cola-content relative bg-white flex-grow overflow-y-auto shadow h-full transition-all">
+            <div class="header"></div>
+            <div class="cola-main-content relative max-w-full p-10">
+                <div class="post-group">
+                    <th:block th:each="post:${posts.items}">
+                            <th:block th:replace="~{modules/post-item::postItem(pageType=null,post=${post})}"></th:block>
+                            <hr>
+                    </th:block>
+                </div>
+                <th:block th:replace="~{modules/pagination::pagination(posts=${posts})}"></th:block>
+            </div>
+        </div>
+
+</th:block>
+</html>

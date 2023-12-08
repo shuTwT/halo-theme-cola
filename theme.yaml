@@ -1,0 +1,17 @@
+apiVersion: theme.halo.run/v1alpha1
+kind: Theme
+metadata:
+  name: theme-cola
+spec:
+  displayName: cola
+  author:
+    name: shuTwT
+    website: https://www.shugram.com
+  description:
+  logo: https://halo.run/logo
+  website: https://halo.shugram.com
+  repo: https://github.com/shuTwT/halo-theme-cola
+  settingName: theme-cola-setting
+  configMapName: theme-cola-configMap
+  version: 1.0.0
+  require: 2.8.0

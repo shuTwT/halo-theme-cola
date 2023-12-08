@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="postItem(pageType,post)">
+    <div class="post-item max-w-full transition p-4 not-prose">
+        <th:block th:replace="~{::postCover(pageType=${pageType},post=${post})}"></th:block>
+        <th:block th:replace="~{::postMeta}"></th:block>
+    </div>
+</th:block>
+<th:block th:fragment="postCover(pageType,post)">
+    <th:block th:if="${pageType=='nohref'}">
+        <div class="post-cover w-full pb-[40%] relative overflow-hidden rounded-3xl bg-[#eee]">
+            <img
+                    class="post-cover absolute left-0 top-0 block transition rounded-3xl object-cover w-full h-full thumbnail"
+                    th:style="'view-transition-name: post-cover'+${post.spec.slug}+';'"
+                    th:src="${post.spec.cover?:theme.config.general.random_cover_api}"
+                    alt="">
+            <h1 class="text-white text-6xl absolute bottom-0 w-full z-[1] p-10"
+                th:text="${post.spec.title}">
+            </h1>
+        </div>
+    </th:block>
+    <th:block th:unless="${pageType=='nohref'}">
+        <a th:href="${post.status.permalink}" href="javascript:void(0);">
+            <div class="post-cover w-full pb-[40%] relative overflow-hidden rounded-3xl bg-[#eee]">
+                <img
+                        class="post-cover absolute left-0 top-0 block transition rounded-3xl object-cover w-full h-full duration-150 ease-in-out thumbnail"
+                        th:src="${post.spec.cover?:theme.config.general.random_cover_api}"
+                        th:style="'view-transition-name: post-cover'+${post.spec.slug}+';'"
+                        alt="">
+                <h1 class="text-white text-6xl absolute bottom-0 w-full z-[1] p-10"
+                    th:text="${post.spec.title}">
+                </h1>
+            </div>
+        </a>
+    </th:block>
+</th:block>
+<th:block th:fragment="postMeta">
+    <div class="cola-post-meta cola-rainbow mt-4">
+        <a>2023年12月6日</a>
+        <a>11.3k字</a>
+        <a>大约15分钟</a>
+    </div>
+</th:block>
+</html>

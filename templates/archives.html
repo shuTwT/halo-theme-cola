@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" th:replace="~{modules/layout::layout(content=~{::content})}">
+<th:block th:fragment="content">
+    <th:block th:replace="~{modules/sidebar::sidebar}"></th:block>
+    <div id="cola-content" class="cola-content relative bg-white flex-grow overflow-y-auto shadow h-full transition-all">
+        <div class="header"></div>
+        <div class="cola-main-content relative max-w-full p-10">
+            <article>
+                <div class="cola-archives">
+                    <div class="tag-cloud cola-rainbow mb-4">
+                        <th:block th:each="tag:${tagFinder.listAll()}">
+                            <a class="link" th:href="${tag.status.permalink}" th:text="${tag.spec.displayName}">
+                            </a>
+                        </th:block>
+                    </div>
+                    <div class="categories cola-rainbow mb-4">
+                        <th:block th:each="category:${categoryFinder.listAll()}">
+                            <a th:href="${category.status.permalink}">
+                                <div th:style="'background-image: url('+${category.spec.cover}+')'"></div>
+                                <h1 th:text="${category.spec.displayName}"></h1>
+                                <span class="mt-2 block select-none" th:text="${category.status.postCount}"></span>
+                            </a>
+                        </th:block>
+                    </div>
+                    <th:block th:each="archive : ${archives.items}">
+                        <h2 th:text="${archive.year}"></h2>
+                        <ul>
+                            <th:block th:each="month : ${archive.months}">
+                                <li th:each="post : ${month.posts}">
+                                    <span th:text="${#dates.format(post.spec.publishTime,'MM-dd')}"></span>
+                                    <a th:href="@{${post.status.permalink}}" th:text="${post.spec.title}">
+                                    </a>
+                                </li>
+                            </th:block>
+                        </ul>
+                    </th:block>
+                    <div class="mt-4" th:if="${archives.hasPrevious() || archives.hasNext()}">
+                        <a th:href="@{${archives.prevUrl}}">
+                            <span>上一页</span>
+                        </a>
+                        <span th:text="${archives.page} +' / '+ ${archives.totalPages}"></span>
+                        <a th:href="@{${archives.nextUrl}}">
+                            <span>下一页</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</th:block>
+</html>

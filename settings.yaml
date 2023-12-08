@@ -1,0 +1,47 @@
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: theme-cola-setting
+spec:
+  forms:
+    - group: general
+      label: 基本
+      formSchema:
+        - $formkit: text
+          name: background_bg
+          label: 背景图
+          value: ""
+        - $formkit: text
+          name: avatar
+          label: 博客头像
+          value: ""
+        - $formkit: text
+          name: random_avatar_api
+          label: 随机头像接口
+          value: "https://t.mwm.moe/tx/"
+          help: 没有填写博客头像时会使用这个
+        - $formkit: text
+          name: random_cover_api
+          label: 随机封面接口
+          value: "https://t.mwm.moe/ys/"
+          help: 没有封面时会使用这个
+        - $formkit: text
+          name: icp
+          label: ICP 备案
+          placeholder: 请输入 ICP 备案号
+        - $formkit: text
+          name: gov
+          label: 公安备案
+          placeholder: 请输入公安备案号
+        - $formkit: textarea
+          name: copyright
+          label: 版权协议
+          placeholder: 请输入版权协议
+    - group: nav
+      label: 导航
+      formSchema:
+        - $formkit: menuRadio
+          name: leftMenu
+          label: 左侧菜单
+          help: 默认主菜单，可前往【外观】—>【菜单】修改
+          value: ""

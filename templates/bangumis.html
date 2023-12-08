@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{modules/layout::layout(content=~{::content})}">
+<th:block th:fragment="content">
+    <th:block th:replace="~{modules/sidebar::sidebar}"></th:block>
+    <div id="cola-content" class="cola-content relative bg-white flex-grow overflow-y-auto shadow h-full transition-all">
+        <div class="header"></div>
+        <div class="cola-main-content relative max-w-full p-10">
+            <article class="prose prose-slate prose-2xl">
+                <th:block th:replace="~{modules/post-item::postItem(pageType='nohref',post=${singlePage})}"></th:block>
+                <th:block th:utext="${singlePage.content.content}">
+                </th:block>
+            </article>
+        </div>
+    </div>
+</th:block>
+</html>

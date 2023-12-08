@@ -1,0 +1,26 @@
+:root{
+    font-size: 10px;
+    --color-primary: #31aaff;
+    --app-sidebar-width:240px;
+}
+
+@font-face {
+    font-family:HarmonyOS Sans;font-style: normal;font-display: swap;
+    src: url('https://npm.elemecdn.com/xcye-blog-static/font/harmonyos/HarmonyOS_Sans_SC_Medium.woff2') format('woff2');
+}
+
+
+body{
+    font-family: HarmonyOS Sans,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica,Arial,sans-serif;
+}
+h1,h2,h3,h4,p,span,input{
+    font-family: HarmonyOS Sans,sans-serif;
+}
+[x-cloak] {
+    display: none !important;
+}
+
+
+::view-transition-group(root) {
+    animation-duration: 0.5s;
+}

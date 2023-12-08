@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" th:replace="~{modules/layout::layout(content=~{::content})}">
+<th:block th:fragment="content">
+    <th:block th:replace="~{modules/sidebar::sidebar}"></th:block>
+    <div id="cola-content" class="cola-content relative bg-white flex-grow overflow-y-auto shadow w-full transition-all">
+        <div class="header"></div>
+        <div class="cola-main-content relative  max-w-full p-10">
+            <article>
+                <div class="cola-links">
+                    <th:block th:each="group : ${groups}">
+                        <h2 th:if="${!#strings.isEmpty(group.spec.displayName)}" th:id="${group.spec.displayName}" th:text="${group.spec.displayName}"></h2>
+                        <ul th:if="${!#lists.isEmpty(group.links)}" class="flex flex-wrap">
+                            <li class="transition-all m-[5px] shadow rounded-lg" th:each="link : ${group.links}"
+                                th:aria-label="${link.spec.description}">
+                                <a class="pb-[100%] relative block transition-colors min-w-[100px] min-h-[100px]"
+                                   th:href="${link.spec.url}" target="_blank" th:title="${link.spec.displayName}">
+                                    <img class="w-full max-w-full block absolute top-0 pointer-events-none bg-gray-300 h-full"
+                                         th:src="${link.spec.logo}" th:alt="${link.spec.displayName}"/>
+                                </a>
+                            </li>
+                        </ul>
+                    </th:block>
+                </div>
+            </article>
+        </div>
+    </div>
+</th:block>
+</html>

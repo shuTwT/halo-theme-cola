@@ -1,0 +1,34 @@
+<!-- https://github.com/theme-nexmoe/hexo-theme-nexmoe -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="vHash=${new java.util.Date().getTime()}"
+      th:fragment="layout(content)">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    <title th:text="${site.title}">cola</title>
+    <link rel="stylesheet"th:href="@{/assets/libs/remixicon.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/base.css(v=${vHash})}">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/tailwind.style.css(v=${vHash})}">
+    <link rel="stylesheet"th:href="@{/assets/libs/prism.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css(v=${vHash})}">
+    <script type="module" th:src="@{/assets/js/main.js(v=1.0.0)}"></script>
+    <script>
+        window.Prism=window.Prism||{}
+        window.Prism.manual = false;
+    </script>
+    <script th:src="@{/assets/libs/prism.js}" data-pjax></script>
+    <script src="https://unpkg.com/@imacrayon/alpine-ajax@0.4.0/dist/cdn.min.js" defer></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/alpinejs/3.13.3/cdn.js" defer></script>
+</head>
+<body class="text-2xl">
+<div class="cola-background" th:style="'background-image:url('+${theme.config.general.background_bg}+')'"></div>
+<div id="app" x-cloak x-data>
+    <th:block th:replace="~{modules/header::header}"></th:block>
+    <div class="cola-container">
+        <th:block th:replace="${content}">
+        </th:block>
+    </div>
+</div>
+</body>
+</html>

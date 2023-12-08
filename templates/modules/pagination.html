@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="pagination(posts)">
+    <div >
+        <a
+                th:href="@{${posts.prevUrl}}"
+                th:if="${posts.hasPrevious()}"
+        >
+            <span>上一页</span>
+        </a>
+
+        <span th:text="${posts.page} +' / '+ ${posts.totalPages}"></span>
+        <a
+                th:href="@{${posts.nextUrl}}"
+                th:if="${posts.hasNext()}"
+        >
+            <span>下一页</span>
+        </a>
+    </div>
+</th:block>
+</html>
