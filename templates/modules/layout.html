@@ -1,23 +1,25 @@
 <!-- https://github.com/theme-nexmoe/hexo-theme-nexmoe -->
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="vHash=${new java.util.Date().getTime()}"
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:with="assetsUrl=${
+theme.config.other.assets.use=='custom'?theme.config.other.assets.cdn_link : #theme.assets('/')},
+theme_version=${theme.config.other.assets.use == 'local'?'?v='+theme.spec.version:''}"
       th:fragment="layout(content)">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="view-transition" content="same-origin">
     <title th:text="${site.title}">cola</title>
-    <link rel="stylesheet"th:href="@{/assets/libs/remixicon.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/base.css(v=${vHash})}">
-    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/tailwind.style.css(v=${vHash})}">
-    <link rel="stylesheet"th:href="@{/assets/libs/prism.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/style.css(v=${vHash})}">
-    <script type="module" th:src="@{/assets/js/main.js(v=1.0.0)}"></script>
+    <link rel="stylesheet"th:href="${assetsUrl+'/libs/remixicon.css'+theme_version}">
+    <link rel="stylesheet" type="text/css" th:href="${assetsUrl+'/css/base.css'+theme_version}">
+    <link rel="stylesheet" type="text/css" th:href="${assetsUrl+'/css/tailwind.style.css'+theme_version}">
+    <link rel="stylesheet"th:href="${assetsUrl+'/libs/prism.css'}">
+    <link rel="stylesheet" type="text/css" th:href="${assetsUrl+'/css/style.css'+theme_version}">
+    <script type="module" th:src="${assetsUrl+'/js/main.js'+theme_version}"></script>
     <script>
         window.Prism=window.Prism||{}
         window.Prism.manual = false;
     </script>
-    <script th:src="@{/assets/libs/prism.js}" data-pjax></script>
+    <script th:src="${assetsUrl+'/libs/prism.js'+theme_version}" data-pjax></script>
     <script src="https://unpkg.com/@imacrayon/alpine-ajax@0.4.0/dist/cdn.min.js" defer></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/alpinejs/3.13.3/cdn.js" defer></script>
 </head>

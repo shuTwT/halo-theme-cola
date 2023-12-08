@@ -45,3 +45,29 @@ spec:
           label: 左侧菜单
           help: 默认主菜单，可前往【外观】—>【菜单】修改
           value: ""
+    - group: other
+      label: 其它
+      formSchema:
+        - $formkit: group
+          name: assets
+          label: 静态资源策略
+          value:
+            use: local
+          children:
+            - $formkit: select
+              name: use
+              id: use
+              key: use
+              label: 类型选择
+              options:
+                - label: 本地
+                  value: local
+                - label: 自定义
+                  value: custom
+            - $formkit: url
+              name: cdn_link
+              if: "$get(use).value == 'custom'"
+              label: cdn地址
+              validation: required
+              value: ''
+              help: 配置自己的cdn地址，确保链接下存在assets文件夹
